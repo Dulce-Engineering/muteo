@@ -1,0 +1,689 @@
+<html>
+  <head>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      #contact_form .section-interests {
+        font-family: "PlusJakartaSanswght", sans-serif;
+      }
+
+      #contact_form .section-interests p.category_title {
+        font-family: "PlusJakartaSanswght", sans-serif;
+        font-weight: 700;
+        margin-top: 4rem;
+        font-size: 1.2rem;
+      }
+
+      #contact_form .btn-submit {
+        transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+
+        font-family: "PlusJakartaSanswght", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        padding: 0.8rem 0;
+        margin: 0;
+        text-transform: uppercase;
+        outline: 0;
+        background-color: white;
+        color: black;
+        font-size: .9rem;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        border: 2px solid white;
+        line-height: initial;
+
+        width: 100%;
+
+      }
+
+      #contact_form .btn-submit.disabled,
+      .btn-submit:disabled {
+        cursor: default;
+        background-color: transparent;
+        color: white;
+        border-color: rgba(255, 255, 255, 0.75);
+      }
+
+      #contact_form .btn-submit:hover {
+        letter-spacing: 0.26rem;
+        background-color: white;
+        color: black;
+      }
+
+      .section-interests .label-checkbox,
+      .section-interests .label-checkbox:hover {
+        font-family: "PlusJakartaSanswght", sans-serif;
+        font-weight: 300;
+        box-sizing: border-box;
+
+        width: 100%;
+        text-transform: uppercase;
+
+        font-size: .88889rem;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        margin: 0;
+        -webkit-appearance: none;
+
+        border: 1px solid rgba(255, 255, 255, 0.8);
+
+        color: #ffffff;
+        letter-spacing: 0.2em;
+
+        padding: 0.6rem 0;
+
+        transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+
+        transition-property: font, letter-spacing, color, border-color;
+      }
+
+      .section-interests .interest-wrapper {
+        margin-top: 1.6rem;
+      }
+
+      label {
+        cursor: pointer;
+        touch-action: none;
+      }
+
+      #contact_form .label-checkbox:hover,
+      #contact_form .label-checkbox.active {
+        color: #0FF788;
+        border-color: #0FF788;
+        letter-spacing: 0.24em;
+        border-width: 2px;
+        margin: -1px 0;
+      }
+
+      #contact_form .is-content {
+        color: white;
+        font-size: 1.5rem;
+      }
+
+      #contact_form input[type="checkbox"] {
+        display: none;
+      }
+
+      #contact_form .label-gdpr input[type="checkbox"] {
+        display: block;
+      }
+
+      #contact_form .label-gdpr {
+        font-size: .88889rem;
+        margin: 1.8rem auto;
+        color: white;
+      }
+
+      #contact_form .label-gdpr a {
+        color: white;
+      }
+
+      #contact_form .label-gdpr a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .form-control {
+        opacity: .75;
+      }
+
+      #contact_form .form-control,
+      #contact_form .form-control:focus,
+      #contact_form .form-control:hover,
+      #contact_form input.form-control,
+      #contact_form input.form-control:focus,
+      #contact_form input.form-control:hover {
+        opacity: 1;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 2.25rem;
+        line-height: 3.3rem;
+        padding-left: 0;
+        padding-right: 0;
+        font-family: "PlusJakartaSanswght", sans-serif;
+        font-variation-settings: 'wght'300;
+        font-weight: 300;
+        height: auto;
+        letter-spacing: .1rem;
+        padding-bottom: 1rem;
+      }
+
+
+      label.error {
+        font-size: .9rem;
+        color: #FFC619;
+        cursor: default;
+      }
+
+      label.error .noticon {
+        vertical-align: baseline;
+        position: relative;
+        bottom: -2px;
+      }
+
+      .column-title {
+        color: white;
+        font-weight: 700;
+      }
+
+      .content_cta {
+        width: auto;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .content_cta .btn-submit {
+        width: initial;
+        padding: 0 3rem;
+      }
+
+      .content-only-side {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      #contact_form .content-block .container {
+        padding: 0;
+      }
+
+      #contact_form .form-group {
+        padding-top: 2.5rem;
+      }
+
+      .column_left .form-group {
+        margin-right: 1.66667rem;
+      }
+
+      .column_right .form-group {
+        margin-left: 1.66667rem;
+      }
+
+      h2.contact_title {
+        color: white;
+        margin-top: 7rem;
+        margin-bottom: 2.5rem;
+      }
+
+      p#contact_error {
+        display: none;
+        margin-top: 2rem;
+        margin-bottom: 3rem !important;
+        line-height: 1em;
+        color: #F70FE8;
+      }
+
+      /* The container */
+      .check-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default checkbox */
+      .check-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border: 1px solid #0FF788;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .check-container:hover input~.checkmark {
+        /*background-color: #ccc;*/
+      }
+
+      /* When the checkbox is checked, add a background */
+      .check-container input:checked~.checkmark {
+        background-color: transparent;
+        border-color: #0FF788;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .check-container input:checked~.checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .check-container .checkmark:after {
+        left: 10px;
+        top: 6px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      #gdpr-error {
+        display: block;
+      }
+
+      #contact_form .content-separator p {
+        color: white;
+        vertical-align: middle;
+        margin: 4rem 0 0;
+        font-size: 1.75rem;
+      }
+
+      /**
+              * Responsive overrides
+              */
+      @media screen and (max-width: 768px) {
+        .section-interests .interest-wrapper {
+          margin-top: .2rem;
+        }
+
+        #contact_form .form-control,
+        #contact_form .form-control:focus,
+        #contact_form .form-control:hover,
+        #contact_form input.form-control,
+        #contact_form input.form-control:focus,
+        #contact_form input.form-control:hover {
+          font-size: 1.3rem;
+        }
+
+        #contact_form .form-group {
+          padding-top: 1.5rem;
+        }
+
+        #contact_form .section-interests p.category_title {
+          margin-top: 2rem;
+          margin-bottom: .8rem;
+        }
+
+        #contact_form .section-interests .label-checkbox,
+        #contact_form .section-interests .label-checkbox:hover {
+          margin-top: 0.5rem;
+          margin: .5rem 0 1rem;
+        }
+
+        #contact_form .btn-submit {
+          width: initial;
+          padding: 0.8rem 4.8rem;
+        }
+
+        #contact_form .content-separator p {
+          font-size: 1.35rem;
+        }
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function ()
+      {
+
+        // enable/disable submit btn
+        jQuery('input[name="name"], input[name="email"], input[name="gdpr"]').on('change', function ()
+        {
+          if (jQuery("#contact_form").valid())
+          {
+            jQuery("button[type='submit']").prop("disabled", false);
+            jQuery("button[type='submit']").removeClass("disabled");
+          } else
+          {
+            jQuery("button[type='submit']").prop("disabled", true);
+            jQuery("button[type='submit']").addClass("disabled");
+          }
+        });
+
+        jQuery('.label-checkbox').on('click touch touchend', function (event)
+        {
+          event.stopPropagation();
+          event.preventDefault();
+
+          if (jQuery(this).children('input').prop('checked') == true)
+          {
+            jQuery(this).children('input').prop('checked', false);
+            jQuery(this).removeClass('active');
+          } else
+          {
+            jQuery(this).children('input').prop('checked', true);
+            jQuery(this).addClass('active');
+          }
+
+          return false;
+        });
+
+        // Form validation
+        jQuery("#contact_form").validate({
+          submitHandler: function (form)
+          {
+
+            var interests = [];
+
+            jQuery("#contact_form input:checked:not(input[name='gdpr'])").each(function ()
+            {
+              interests.push(jQuery(this).val());
+            });
+
+            jQuery.ajax({
+              url: "https://formspree.io/f/mayvponn",
+              method: "POST",
+              data: {
+                Name: jQuery(form).find("input[name='name']").val(),
+                Email: jQuery(form).find("input[name='email']").val(),
+                Company: jQuery(form).find("input[name='company']").val(),
+                Interests: interests
+              },
+              dataType: "json",
+              success: function ()
+              {
+                // console.log('success, redirect');
+                window.location = "/thank-you";
+              },
+              error: function ()
+              {
+                // console.log('fail, show error message');
+                jQuery('p#contact_error').show();
+              }
+            });
+          }
+        });
+
+        // Custom validation message
+        jQuery.extend(jQuery.validator.messages, {
+          required: "<i class='noticon noticon-warning'></i> This field must be completed.",
+          email: "<i class='noticon noticon-warning'></i> Please enter a valid email address."
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <form action="#" id="contact_form">
+
+      <!-- Name -->
+      <section class="content-block top_spacing">
+        <div class="content-wrapper">
+          <div class="column-content" data-module="paragraph">
+            <div class="is-content">
+              <div class="form-group">
+                <label class="hidden" for="name">Name</label>
+                <input id="name" type="text" placeholder="What's your name?" name="name" required class="form-control"
+                  aria-required="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Email -->
+      <section class="content-block top_spacing">
+        <div class="content-wrapper">
+          <div class="column-content" data-module="paragraph">
+            <div class="is-content">
+              <div class="form-group">
+                <label class="hidden" for="email">E-Mail</label>
+                <input id="email" type="email" placeholder="What's your email?" name="email" required class="form-control"
+                  aria-required="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Company -->
+      <section class="content-block top_spacing">
+        <div class="content-wrapper">
+          <div class="column-content" data-module="paragraph">
+            <div class="is-content">
+              <div class="form-group">
+                <label class="hidden" for="company">Firma</label>
+                <input id="company" type="text" placeholder="Your company's name?" name="company" class="form-control"
+                  aria-required="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How can we help -->
+      <section class="content-block content-separator" data-column-mode-sm="single" data-column-mode-xs="single">
+        <div class="container">
+          <div class="row">
+            <div class="column" data-xl-width="12">
+              <div class="content-wrapper">
+                <div id="content_iagyei0xf" class="column-content" data-module="text">
+                  <div class="is-content">
+                    <p style="font-size: 1.444rem; line-height: 2.222rem;"
+                      data-mce-style="font-size: 1.444rem; line-height: 2.222rem;" data-font-size-xl="1.444rem"
+                      data-line-height-xl="2.222rem" class="custom_soud0sb7f style_i6k7jet2w" data-font-size-xs="1.000rem"
+                      data-line-height-lg="2.111rem" data-font-size-md="1.333rem" data-line-height-md="1.889rem"
+                      data-font-size-sm="1.222rem" data-line-height-sm="1.889rem" data-line-height-xs="1.556rem"><span
+                        style="color: rgb(255, 255, 255); letter-spacing: 0.028rem;"
+                        data-mce-style="color: rgb(255, 255, 255); letter-spacing: 0.028rem;"
+                        data-letter-spacing-xl="0.028rem" data-letter-spacing-xs="0.000rem">How can we help?</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section class="content-block section-interests" data-column-mode-sm="single" data-column-mode-xs="single">
+        <div class="container">
+          <div class="row">
+            <div class="column column_left" data-xl-width="4" data-xs-width="12">
+              <div class="content-wrapper">
+                <div id="" class="column-content top_spacing" data-module="paragraph">
+                  <div class="column-title is-content">
+                    <p class="category_title">SPRINTS</p>
+                  </div>
+                </div>
+
+                <div id="content_c0fa10b10" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="Experience Design" />Experience Design
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_b3d7d510e" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="UI Design" />UI Design
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_5tx7okukm" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="Product Design" />Product Design
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column_middle" data-xl-width="4" data-xs-width="12">
+              <div class="content-wrapper">
+                <div id="" class="column-content top_spacing" data-module="paragraph">
+                  <div class="column-title is-content">
+                    <p class="category_title">STRATEGY</p>
+                  </div>
+                </div>
+                <div id="content_a7819a34c" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="CDR Strategy" />CDR Strategy
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_f7f004651" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="CDR Audit" />CDR Audit
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_9hsrg4x1u" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="Open Data" />Open Data
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column_right" data-xl-width="4" data-xs-width="12">
+              <div class="content-wrapper">
+                <div id="" class="column-content top_spacing" data-module="paragraph">
+                  <div class="column-title is-content">
+                    <p class="category_title">CREATIVE</p>
+                  </div>
+                </div>
+                <div id="content_4vlpl426n" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="UX Audit" />UX Audit
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_tin8f40rt" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="Storytelling" />Storytelling
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="content_hwb8dje16" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <div class="interest-wrapper">
+                        <label class="btn-input label-checkbox">
+                          <input type="checkbox" name="interest" value="Brand Engineering" />Brand Engineering
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column column_full_width content-only-side" data-xl-width="12" data-align="center">
+              <label class="check-container label-gdpr" data-align="center">
+                I have read Muteo's <a�href="http: //www.muteo.co/privacy-notice">Privacy Policy</a> and consent that my
+                  name and email address will be collected and stored electronically to answer my request. You can revoke
+                  your consent at any time by sending an email
+                  to <a href="mailto:hello@muteo.co">hello@muteo.co</a>.
+                  <input type="checkbox" name="gdpr" value="gdpr-accepted" required aria-required="true">
+                  <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column column_left content-only-side" data-xl-width="4">
+            </div>
+            <div class="column column_middle cta" data-xl-width="4">
+              <div class="content-wrapper">
+                <div class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <button type="submit" value="Submit" class="btn btn-primary btn-submit disabled" disabled>
+                        Send
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column column_right content-only-side" data-xl-width="4">
+            </div>
+          </div>
+
+          <div id="row_7hy7xk64c" class="row">
+            <div class="column content_cta" data-xl-width="12">
+              <div class="content-wrapper">
+                <div id="content_el19xnfw9" class="column-content">
+                  <div class="" data-align="center">
+                    <div class="is-content" data-width="grid-width">
+                      <p id="contact_error">An error occurred while submitting the form. Please try again later.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <input type="hidden" name="_next" value="//www.muteo.co/thank-you">
+      <input type="hidden" name="_subject" value="Contact Form Muteo">
+    </form>
+  </body>
+</html>
+

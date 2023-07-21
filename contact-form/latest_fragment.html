@@ -1,0 +1,327 @@
+<html>
+  <head>
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .disabled {
+        color: red !important;
+      }
+
+      .input-container {
+        height: 64px;
+        position: relative;
+        width: 100%;
+      }
+
+      .ic1 {
+        margin-top: 26px;
+      }
+
+      input {
+        height: 23px;
+        line-height: 23px;
+        background: #4200B2;
+        color: #fff !important;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #8F89F8 !important;
+        font-size: 18px;
+        height: 100%;
+        width: 100%;
+      }
+
+
+      .cut {
+        background-color: #4200B2;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 89px;
+      }
+
+      .cut-short {
+        width: 50px;
+      }
+
+      input:focus~.cut,
+      input:not(:placeholder-shown)~.cut {
+        transform: translateY(8px);
+      }
+
+      .placeholder {
+        color: #8F89F8 !important;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 24px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+
+
+      label .dot {
+        color: #0FF788;
+      }
+
+
+      input:focus~.placeholder,
+      input:not(:placeholder-shown)~.placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+        color: #fff !important;
+      }
+
+      input:not(:placeholder-shown)~.placeholder {
+        color: #808097;
+      }
+
+      input:focus~.placeholder {
+        color: #dc2f55;
+      }
+
+      input:focus~label .dot {
+        color: #FFFFFF !important;
+      }
+
+      #contact_form .btn-submit {
+        transition: all .2s linear;
+        -moz-transition: all .2s linear;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+
+        font-family: "PlusJakartaSanswght", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.2rem;
+        padding: 0.8rem 0;
+        margin: 0;
+        text-transform: uppercase;
+        outline: 0;
+        background-color: white;
+        color: black;
+        font-size: .9rem;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        border: 2px solid white;
+        line-height: initial;
+
+        width: 276px !important;
+
+      }
+
+      #contact_form .btn-submit.disabled,
+      .btn-submit:disabled {
+        cursor: default;
+        background-color: transparent;
+        color: white !important;
+        border-color: rgba(255, 255, 255, 0.75);
+      }
+
+      #contact_form .btn-submit:hover {
+        letter-spacing: 0.26rem;
+        background-color: white;
+        color: black;
+      }
+
+
+      .content_cta .btn-submit {
+        width: initial;
+        padding: 0 3rem;
+      }
+
+      #contact_form .btn-submit {
+        width: initial;
+        padding: 0.8rem 4.8rem;
+      }
+
+      label.error {
+        font-size: .9rem;
+        color: #FFC619;
+        cursor: default;
+      }
+
+      label.error .noticon {
+        vertical-align: baseline;
+        position: relative;
+        bottom: -2px;
+      }
+
+      .check-container {
+        display: block;
+        position: relative;
+        padding-left: 4px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-align: start !important;
+      }
+
+      /* Hide the browser's default checkbox */
+      .check-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom checkbox */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border: 1px solid #8F89F8 !important;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .check-container:hover input~.checkmark {
+        /*background-color: #ccc;*/
+      }
+
+      /* When the checkbox is checked, add a background */
+      .check-container input:checked~.checkmark {
+        background-color: transparent;
+        border-color: #0FF788;
+      }
+
+      /* Create the checkmark/indicator (hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the checkmark when checked */
+      .check-container input:checked~.checkmark:after {
+        display: block;
+      }
+
+      /* Style the checkmark/indicator */
+      .check-container .checkmark:after {
+        left: 10px;
+        top: 6px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      #gdpr-error {
+        display: block;
+      }
+
+      #contact_form .content-separator p {
+        color: white;
+        vertical-align: middle;
+        margin: 4rem 0 0;
+        font-size: 1.75rem;
+      }
+
+      .has_error {
+        border: solid red !important;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function ()
+      {
+
+        // enable/disable submit btn
+        jQuery('input[name="name"], input[name="email"], input[name="gdpr"]').on('change', function ()
+        {
+
+        });
+
+        jQuery('.label-checkbox').on('click touch touchend', function (event)
+        {
+
+        });
+
+        // Form validation
+        jQuery("#contact_form").validate({
+          rules: {
+            name: {
+              required: true,
+              minlength: 3,
+            },
+          },
+          highlight: function (element)
+          {
+            jQuery(element).parent().removeClass('has-error');
+          },
+          unhighlight: function (element)
+          {
+            jQuery(element).parent().removeClass('has-error');
+          },
+          errorElement: 'span',
+          errorClass: 'validation-error-message help-block form-helper bold',
+          errorPlacement: function (error, element)
+          {
+            if (element.parent('.input-group').length)
+            {
+              error.insertAfter(element.parent());
+            } else
+            {
+              error.insertAfter(element);
+            }
+          }
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <form id="contact_form" autocomplete="off" action="https://formspree.io/f/mayvponn" method="POST">
+
+      <!-- Name -->
+      <div class="input-container ic1">
+        <input type="text" name="name" id="name" placeholder=" " required>
+        <div class="cut"></div>
+        <label for="name" class="placeholder">Your Name<span class="dot">*</span></label>
+      </div>
+
+
+      <div>
+        <label class="check-container label-gdpr" data-align="center">
+          I agreee to Muteo's <a�href="http: //www.muteo.co/privacy-notice">Privacy Policy</a>
+            <input type="checkbox" name="gdpr" value="gdpr-accepted">
+            <span class="checkmark"></span>
+        </label>
+      </div>
+
+
+
+      <button type="submit" value="Submit" class="btn btn-primary btn-submit disabled" disabled>
+        Send
+      </button>
+
+
+
+      <div>
+        <div data-xl-width="12">
+
+          <p id="contact_error">An error occurred while submitting the form. Please try again later.
+          </p>
+
+        </div>
+      </div>
+
+    </form>
+  </body>
+</html>
+
+
