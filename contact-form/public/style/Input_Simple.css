@@ -1,0 +1,140 @@
+/* container =================================================================================== */
+
+input-simple 
+{
+  position: relative;
+  display: inline-block;
+  border: 1px solid #8f89f8;
+  transition: 250ms;
+  height: auto;
+  width: 100%;
+  padding: 18px 20px;
+  margin: 14px 0 16px 0;
+}
+input-simple:has(input.error)
+{
+  border: 1px solid #F38851;
+}
+input-simple.has-data::after
+{
+  display: flex;
+  content: url(../image/icon-tick.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin: 0 20px;
+  padding: 0;
+  font-size: 0;
+}
+input-simple:has(input.error)::after
+{
+  display: flex;
+  content: url(../image/icon-cross.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin: 0 20px;
+  padding: 0;
+  font-size: 0;
+}
+input-simple:hover,
+input-simple:hover:has(input.error)
+{
+  border: 1px solid #fff;
+}
+
+/* label ======================================================================================= */
+
+input-simple [cid=box_label] 
+{
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-align: left;
+  color: #8f89f8;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  padding: 0 0 0 20px;
+  transition: 250ms;
+  pointer-events: none;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+input-simple.has-data [cid=box_label],
+input-simple:has([cid=box_input]:focus) [cid=box_label]
+{
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  background: #4200B2;
+  top: -8px;
+  left: 8px;
+  height: 16px;
+  padding: 0 10px;
+  transition: 250ms;
+}
+input-simple:has([cid=box_input]:focus) [cid=box_label]
+{
+  color: #fff;
+}
+input-simple.has-data:has(input.error) [cid=box_label],
+input-simple:has([cid=box_input]:focus.error) [cid=box_label]
+{
+  color: #F38851;
+}
+
+/* input ======================================================================================= */
+
+input-simple [cid=box_input] 
+{
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.32px;
+  text-align: left;
+  color: #8f89f8;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+input-simple [cid=box_input]:focus
+{
+  border: none;
+  color: #fff;
+}
+
+input-simple label.error
+{
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  color: #F38851;
+  position: absolute;
+  display: inline-block;
+  top: 100%;
+  left: 0;
+  padding: 4px 0 0 0;
+}
