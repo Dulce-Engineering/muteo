@@ -3655,8 +3655,10 @@
   
   <link rel='stylesheet' href='./style/Input_Simple.css' type='text/css' />
   <link rel='stylesheet' href='./style/Input_Area.css' type='text/css' />
+  <link rel='stylesheet' href='./style/Check_Simple.css' type='text/css' />
   <script src="./component/Input_Simple.js" type="module"></script>
   <script src="./component/Input_Area.js" type="module"></script>
+  <script src="./component/Check_Simple.js" type="module"></script>
 </head>
 
 <body class="page-template-default page page-id-5202 is-frontend dynamic-mode mejs-semplice-ui" bgcolor="#4200b2"
@@ -4183,7 +4185,7 @@
                         -->
                         <!-- Validation library -->
                         <script
-                          src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+                          src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
                         <script type="text/javascript">
                           jQuery(document).ready(function ()
                           {
@@ -4480,60 +4482,51 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="row">
-                                <div class="column column_full_width content-only-side" data-xl-width="12"
-                                  data-align="center">
-                                  <label class="check-container label-gdpr" data-align="center">
-                                    I have read Muteo's <a href="http: //www.muteo.co/privacy-notice">Privacy Policy</a>
-                                    and consent that my name and email address will be collected and stored
-                                    electronically to answer my request. You can revoke your consent at any time by
-                                    sending an email
-                                    to <a href="mailto:hello@muteo.co">hello@muteo.co</a>.
-                                    <input type="checkbox" name="gdpr" value="gdpr-accepted" required
-                                      aria-required="true">
-                                    <span class="checkmark"></span>
-                                  </label>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="column column_left content-only-side" data-xl-width="4">
-                                </div>
-                                <div class="column column_middle cta" data-xl-width="4">
-                                  <div class="content-wrapper">
-                                    <div class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <button type="submit" value="Submit"
-                                            class="btn btn-primary btn-submit disabled" disabled>
-                                            Send
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="column column_right content-only-side" data-xl-width="4">
-                                </div>
-                              </div>
-
-                              <div id="row_7hy7xk64c" class="row">
-                                <div class="column content_cta" data-xl-width="12">
-                                  <div class="content-wrapper">
-                                    <div id="content_el19xnfw9" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <p id="contact_error">An error occurred while submitting the form. Please try
-                                            again later.
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
                             </div>
                           </section>
+                          
+                          <check-simple has-name="gdpr" is-required value="gdpr-accepted">
+                            <span slot="label">
+                              I agree to Muteo's <a href="http://www.muteo.co/privacy-notice">Privacy Policy</a>
+                            </span>
+                          </check-simple>
+
+                          <div class="row">
+                            <div class="column column_left content-only-side" data-xl-width="4">
+                            </div>
+                            <div class="column column_middle cta" data-xl-width="4">
+                              <div class="content-wrapper">
+                                <div class="column-content">
+                                  <div class="" data-align="center">
+                                    <div class="is-content" data-width="grid-width">
+                                      <button type="submit" value="Submit"
+                                        class="btn btn-primary btn-submit disabled" disabled>
+                                        Send
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="column column_right content-only-side" data-xl-width="4">
+                            </div>
+                          </div>
+
+                          <div id="row_7hy7xk64c" class="row">
+                            <div class="column content_cta" data-xl-width="12">
+                              <div class="content-wrapper">
+                                <div id="content_el19xnfw9" class="column-content">
+                                  <div class="" data-align="center">
+                                    <div class="is-content" data-width="grid-width">
+                                      <p id="contact_error">An error occurred while submitting the form. Please try
+                                        again later.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
 
                           <input type="hidden" name="_next" value="//www.muteo.co/thank-you">
                           <input type="hidden" name="_subject" value="Contact Form Muteo">

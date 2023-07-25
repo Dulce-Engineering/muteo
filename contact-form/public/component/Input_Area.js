@@ -7,7 +7,6 @@ class Input_Area extends HTMLElement
   constructor()
   {
     super();
-    this.item_value = null;
     Utils.Bind(this, "On_");
   }
 
@@ -81,7 +80,6 @@ class Input_Area extends HTMLElement
 
     Utils.Set_Id_Shortcuts(this, this, "cid");
 
-    //this.box_input.addEventListener("blur", this.On_Blur);
     this.box_input.addEventListener("input", this.On_Change);
   }
 }

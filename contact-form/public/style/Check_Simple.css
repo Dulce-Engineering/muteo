@@ -1,0 +1,88 @@
+/* container =================================================================================== */
+
+check-simple 
+{
+  display: inline-block;
+  transition: 250ms;
+  height: auto;
+  width: 100%;
+  font-size: 0;
+  position: relative;
+  margin: 14px 0 16px 0;
+}
+
+/* input ======================================================================================= */
+
+check-simple [cid=box_input] 
+{
+  display: initial !important;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* checkbox ==================================================================================== */
+
+check-simple .checkbox
+{
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #8F89F8;
+  pointer-events: none;
+  transition: 250ms;
+}
+check-simple:has(input:checked) .checkbox
+{
+  content: url(../image/icon-tick-sq.svg);
+}
+check-simple:hover .checkbox,
+check-simple .checkbox:focus-visible
+{
+  border: 1px solid #fff;
+  outline: none;
+}
+
+/* label ======================================================================================= */
+
+check-simple label
+{
+  color: #8F89F8;
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  display: flex;
+  align-items: center;
+}
+check-simple label span
+{
+  margin-left: 16px;
+}
+check-simple label a
+{
+  color: #0FF788;
+  text-decoration-line: underline;
+}
+
+/* error label ================================================================================= */
+
+check-simple label .error
+{
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.24px;
+  color: #F38851;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+}
