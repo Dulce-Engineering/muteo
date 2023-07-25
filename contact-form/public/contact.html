@@ -3654,7 +3654,9 @@
   <link rel="shortcut icon" type="image/png" href="https://muteo.co/wp-content/uploads/2021/11/favicon-1.png" sizes="32x32">
   
   <link rel='stylesheet' href='./style/Input_Simple.css' type='text/css' />
+  <link rel='stylesheet' href='./style/Input_Area.css' type='text/css' />
   <script src="./component/Input_Simple.js" type="module"></script>
+  <script src="./component/Input_Area.js" type="module"></script>
 </head>
 
 <body class="page-template-default page page-id-5202 is-frontend dynamic-mode mejs-semplice-ui" bgcolor="#4200b2"
@@ -4312,7 +4314,7 @@
                           <!-- Company -->
                           <input-simple has-name="company" label-text="Your Company Name"></input-simple>
 
-                          <input-area label-text="Tell us more..."></input-area>
+                          <input-area has-name="more" placeholder="Tell us more..." maxlength="260"></input-area>
 
                           <!-- How can we help -->
                           <section class="content-block content-separator" data-column-mode-sm="single"

@@ -41,22 +41,9 @@ class Input_Simple extends HTMLElement
 
   // events =======================================================================================
 
-  On_Focus(event)
-  {
-    this.classList.remove("error");
-    requestAnimationFrame(this.On_Add_Focus);
-  }
-
-  On_Add_Focus()
-  {
-    this.classList.add("focus");
-  }
-
   On_Blur(event)
   {
-    const always_active = Utils.toBoolean(this.getAttribute("always-active"));
-
-    if (this.Has_Value() || always_active)
+    if (this.Has_Value())
     {
       this.classList.add("has-data");
     }
@@ -108,7 +95,6 @@ class Input_Simple extends HTMLElement
       this.box_label.innerText = this.getAttribute("label-text");
     }
 
-    //this.box_input.addEventListener("focus", this.On_Focus);
     this.box_input.addEventListener("blur", this.On_Blur);
 
     this.Render_Value();
