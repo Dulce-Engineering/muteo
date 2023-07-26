@@ -3656,9 +3656,11 @@
   <link rel='stylesheet' href='./style/Input_Simple.css' type='text/css' />
   <link rel='stylesheet' href='./style/Input_Area.css' type='text/css' />
   <link rel='stylesheet' href='./style/Check_Simple.css' type='text/css' />
+  <link rel='stylesheet' href='./style/Select_Multiple.css' type='text/css' />
   <script src="./component/Input_Simple.js" type="module"></script>
   <script src="./component/Input_Area.js" type="module"></script>
   <script src="./component/Check_Simple.js" type="module"></script>
+  <script src="./component/Select_Multiple.js" type="module"></script>
 </head>
 
 <body class="page-template-default page page-id-5202 is-frontend dynamic-mode mejs-semplice-ui" bgcolor="#4200b2"
@@ -4184,8 +4186,7 @@
                          ######     ######
                         -->
                         <!-- Validation library -->
-                        <script
-                          src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
                         <script type="text/javascript">
                           jQuery(document).ready(function ()
                           {
@@ -4316,6 +4317,7 @@
                           <!-- Company -->
                           <input-simple has-name="company" label-text="Your Company Name"></input-simple>
 
+                          <!-- More -->
                           <input-area has-name="more" placeholder="Tell us more..." maxlength="260"></input-area>
 
                           <!-- How can we help -->
@@ -4347,150 +4349,22 @@
                           </section>
 
                           <!-- Interests -->
-                          <section class="content-block section-interests" data-column-mode-sm="single"
-                            data-column-mode-xs="single">
-                            <div class="container">
-                              <div class="row">
-                                <div class="column column_left" data-xl-width="4" data-xs-width="12">
-                                  <div class="content-wrapper">
-                                    <div id="" class="column-content top_spacing" data-module="paragraph">
-                                      <div class="column-title is-content">
-                                        <p class="category_title">SPRINTS</p>
-                                      </div>
-                                    </div>
-
-                                    <div id="content_c0fa10b10" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest"
-                                                value="Experience Design" />Experience Design
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_b3d7d510e" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="UI Design" />UI Design
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_5tx7okukm" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="Product Design" />Product
-                                              Design
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="column column_middle" data-xl-width="4" data-xs-width="12">
-                                  <div class="content-wrapper">
-                                    <div id="" class="column-content top_spacing" data-module="paragraph">
-                                      <div class="column-title is-content">
-                                        <p class="category_title">STRATEGY</p>
-                                      </div>
-                                    </div>
-                                    <div id="content_a7819a34c" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="CDR Strategy" />CDR Strategy
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_f7f004651" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="CDR Audit" />CDR Audit
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_9hsrg4x1u" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="Open Data" />Open Data
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="column column_right" data-xl-width="4" data-xs-width="12">
-                                  <div class="content-wrapper">
-                                    <div id="" class="column-content top_spacing" data-module="paragraph">
-                                      <div class="column-title is-content">
-                                        <p class="category_title">CREATIVE</p>
-                                      </div>
-                                    </div>
-                                    <div id="content_4vlpl426n" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="UX Audit" />UX Audit
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_tin8f40rt" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="Storytelling" />Storytelling
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div id="content_hwb8dje16" class="column-content">
-                                      <div class="" data-align="center">
-                                        <div class="is-content" data-width="grid-width">
-                                          <div class="interest-wrapper">
-                                            <label class="btn-input label-checkbox">
-                                              <input type="checkbox" name="interest" value="Brand Engineering" />Brand
-                                              Engineering
-                                            </label>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
+                          <select-multiple has-name="interest" label-text="Choose a category" hidden>
+                            <option value="Discovery">Discovery</option>
+                            <option value="Strategy">Strategy</option>
+                            <option value="Design">Design</option>
+                            <option value="Branding">Branding</option>
+                            <option value="Other">Other</option>
+                          </select-multiple>
                           
+                          <!-- Privacy -->
                           <check-simple has-name="gdpr" is-required value="gdpr-accepted">
                             <span slot="label">
                               I agree to Muteo's <a href="http://www.muteo.co/privacy-notice">Privacy Policy</a>
                             </span>
                           </check-simple>
 
+                          <!-- Send -->
                           <div class="row">
                             <div class="column column_left content-only-side" data-xl-width="4">
                             </div>
@@ -4512,6 +4386,7 @@
                             </div>
                           </div>
 
+                          <!-- Error -->
                           <div id="row_7hy7xk64c" class="row">
                             <div class="column content_cta" data-xl-width="12">
                               <div class="content-wrapper">

@@ -1,0 +1,92 @@
+select-multiple
+{
+  background-color: #fff;
+  display: block;
+}
+
+/* header ====================================================================================== */
+
+select-multiple [cid=header_elem]
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  color: #4200B2;
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.18px;
+}
+select-multiple [cid=header_elem]:after
+{
+  content: url(../image/icon-open.svg);
+  width: 28px;
+  height: 28px;
+}
+select-multiple.open [cid=header_elem]:after
+{
+  content: url(../image/icon-close.svg);
+  width: 28px;
+  height: 28px;
+}
+select-multiple [cid=header_elem]:hover
+{
+  background: #F9F9FF;
+}
+
+/* items ======================================================================================= */
+
+select-multiple .items
+{
+  padding: 20px 0;
+  border-top: 1px solid #8F89F8;
+  display: none;
+}
+select-multiple.open .items
+{
+  display: block;
+}
+
+/* check-simple ================================================================================ */
+
+select-multiple check-simple
+{
+  padding: 20px;
+  margin: 0;
+}
+select-multiple check-simple:hover
+{
+  background: #F9F9FF;
+}
+select-multiple check-simple span
+{
+  color: #6956D1;
+  font-family: 'PlusJakartaSanswght', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* checkbox ==================================================================================== */
+
+select-multiple check-simple .checkbox
+{
+  border: 1px solid #6956D1;
+  background-color: #F9F9FF;
+}
+select-multiple check-simple:has(input:checked) .checkbox
+{
+  content: url(../image/icon-tick-sq-green.svg);
+  border: none;
+}
+select-multiple check-simple:hover .checkbox,
+select-multiple check-simple .checkbox:focus-visible
+{
+  border: 1px solid #8F89F8;
+  background-color: #fff;
+}

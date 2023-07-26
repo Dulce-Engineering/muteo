@@ -1,6 +1,6 @@
 import Utils from "./Utils.js";
 
-class Input_Area extends HTMLElement
+class Check_Simple extends HTMLElement
 {
   static tname = "check-simple";
     
@@ -62,6 +62,6 @@ class Input_Area extends HTMLElement
   }
 }
 
-Utils.Register_Element(Input_Area);
+Utils.Register_Element(Check_Simple);
 
-export default Input_Area;
+export default Check_Simple;
