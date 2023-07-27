@@ -4194,6 +4194,28 @@
                           {
                             max-width: 276px;
                           }
+
+                          @media screen and (min-width: 992px)
+                          {
+                            .sections 
+                            {
+                              display: grid;
+                              grid-template-columns: 1fr 1fr;
+                            }
+                            .sections section
+                            {
+                              grid-column: 1 / 3;
+                            }
+                            .sections section:nth-child(2)
+                            {
+                              grid-column: 1 / 2;
+                            }
+                            .sections section:nth-child(3)
+                            {
+                              grid-column: 2 / 3;
+                              padding-top: 4.444444444444445rem;
+                            }
+                          }
                         </style>
 
                         <!--
