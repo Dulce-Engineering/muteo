@@ -3803,6 +3803,8 @@
                       </div>
                     </div>
 
+                    <div id="div_line"></div>
+
                     <div id="content_iagyei0xf" class="column-content" data-module="text">
                       <div class="is-content">
                         <p style="font-size: 1.444rem; line-height: 2.222rem;"
@@ -3889,8 +3891,8 @@
                           .btn-submit:disabled {
                             cursor: default;
                             background-color: transparent;
-                            color: white;
-                            border-color: rgba(255, 255, 255, 0.75);
+                            color: #8F89F8;
+                            border-color: #8F89F8;
                           }
 
                           #contact_form .btn-submit:hover {
@@ -4129,13 +4131,12 @@
                           #contact_form .content-separator p {
                             color: white;
                             vertical-align: middle;
-                            margin: 4rem 0 0;
                             font-size: 1.75rem;
                           }
 
                           /**
-     * Responsive overrides
-     */
+                          * Responsive overrides
+                          */
                           @media screen and (max-width: 768px) {
                             .section-interests .interest-wrapper {
                               margin-top: .2rem;
@@ -4174,6 +4175,25 @@
                               font-size: 1.35rem;
                             }
                           }
+
+                          #div_line
+                          {
+                            border-bottom: 4px solid #0FF788;
+                            display: inline-block;
+                            width: 35px;
+                            height: 35px;
+                            margin: 0 0 20px 0;
+                          }
+
+                          check-simple[has-name=gdpr]
+                          {
+                            margin: 32px 0 32px 0;
+                          }
+
+                          #contact_form .btn-submit
+                          {
+                            max-width: 276px;
+                          }
                         </style>
 
                         <!--
@@ -4204,36 +4224,10 @@
                               }
                             });
 
-                            jQuery('.label-checkbox').on('click touch touchend', function (event)
-                            {
-                              event.stopPropagation();
-                              event.preventDefault();
-
-                              if (jQuery(this).children('input').prop('checked') == true)
-                              {
-                                jQuery(this).children('input').prop('checked', false);
-                                jQuery(this).removeClass('active');
-                              } else
-                              {
-                                jQuery(this).children('input').prop('checked', true);
-                                jQuery(this).addClass('active');
-                              }
-
-                              return false;
-                            });
-
                             // Form validation
                             jQuery("#contact_form").validate({
                               submitHandler: function (form)
                               {
-
-                                var interests = [];
-
-                                jQuery("#contact_form input:checked:not(input[name='gdpr'])").each(function ()
-                                {
-                                  interests.push(jQuery(this).val());
-                                });
-
                                 jQuery.ajax({
                                   url: "https://formspree.io/f/mayvponn",
                                   method: "POST",
@@ -4241,7 +4235,7 @@
                                     Name: jQuery(form).find("input[name='name']").val(),
                                     Email: jQuery(form).find("input[name='email']").val(),
                                     Company: jQuery(form).find("input[name='company']").val(),
-                                    Interests: interests
+                                    Interests: jQuery(form).find("[name='interest']").val()
                                   },
                                   dataType: "json",
                                   success: function ()
@@ -4349,7 +4343,7 @@
                           </section>
 
                           <!-- Interests -->
-                          <select-multiple has-name="interest" label-text="Choose a category" hidden>
+                          <select-multiple name="interest" label-text="Choose a category" hidden>
                             <option value="Discovery">Discovery</option>
                             <option value="Strategy">Strategy</option>
                             <option value="Design">Design</option>
@@ -4365,26 +4359,10 @@
                           </check-simple>
 
                           <!-- Send -->
-                          <div class="row">
-                            <div class="column column_left content-only-side" data-xl-width="4">
-                            </div>
-                            <div class="column column_middle cta" data-xl-width="4">
-                              <div class="content-wrapper">
-                                <div class="column-content">
-                                  <div class="" data-align="center">
-                                    <div class="is-content" data-width="grid-width">
-                                      <button type="submit" value="Submit"
-                                        class="btn btn-primary btn-submit disabled" disabled>
-                                        Send
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="column column_right content-only-side" data-xl-width="4">
-                            </div>
-                          </div>
+                          <button type="submit" value="Submit"
+                            class="btn btn-primary btn-submit disabled" disabled>
+                            Send
+                          </button>
 
                           <!-- Error -->
                           <div id="row_7hy7xk64c" class="row">

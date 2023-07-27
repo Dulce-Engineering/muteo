@@ -22,6 +22,11 @@ class Check_Simple extends HTMLElement
     return this?.box_input?.value;
   }
 
+  get checked()
+  {
+    return this?.box_input?.checked;
+  }
+
   // events =======================================================================================
 
   // rendering ====================================================================================

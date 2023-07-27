@@ -19,7 +19,22 @@ class Select_Multiple extends HTMLElement
 
   get value()
   {
-    return this?.box_input?.value;
+    let res = null;
+
+    const items = this.querySelectorAll("check-simple");
+    if (!Utils.isEmpty(items))
+    {
+      res = [];
+      for (const item of items)
+      {
+        if (item.checked)
+        {
+          res.push(item.value);
+        }
+      }
+    }
+
+    return res;
   }
 
   // events =======================================================================================
