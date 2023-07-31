@@ -4325,10 +4325,16 @@
                           </section>
 
                           <!-- Name -->
-                          <input-simple has-name="name" label-text="Your Name*" is-required></input-simple>
+                          <input-simple has-name="name" is-required>
+                            <span slot="label">Your Name</span>
+                            <span slot="label" class="highlight">*</span>
+                          </input-simple>
 
                           <!-- Email -->
-                          <input-simple has-name="email" label-text="Your Email*" is-required input-type="email"></input-simple>
+                          <input-simple has-name="email" is-required input-type="email">
+                            <span slot="label">Your Email</span>
+                            <span slot="label" class="highlight">*</span>
+                          </input-simple>
 
                           <!-- Company -->
                           <input-simple has-name="company" label-text="Your Company Name"></input-simple>

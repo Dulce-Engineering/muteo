@@ -40,13 +40,15 @@ select-multiple [cid=header_elem]:hover
 
 select-multiple .items
 {
-  padding: 20px 0;
   border-top: 1px solid #8F89F8;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+  padding: 0;
 }
 select-multiple.open .items
 {
-  display: block;
+  max-height: 500px;
 }
 
 /* check-simple ================================================================================ */
@@ -55,6 +57,14 @@ select-multiple check-simple
 {
   padding: 20px;
   margin: 0;
+}
+select-multiple check-simple:first-child
+{
+  margin-top: 20px;
+}
+select-multiple check-simple:last-child
+{
+  margin-bottom: 20px;
 }
 select-multiple check-simple:hover
 {

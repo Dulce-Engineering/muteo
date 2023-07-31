@@ -82,13 +82,13 @@ class Input_Simple extends HTMLElement
   Render()
   {
     const html = `
-      <label cid="box_label"></label>
+      <label cid="box_label"><slot name="label"></slot></label>
       ${this.Render_Input()}
     `;
 
-    const doc = Utils.toDocument(html); // parse html into dom elements
-    this.replaceChildren(doc); // insert elements into this component
-    Utils.Set_Id_Shortcuts(this, this, "cid"); // create shortcust to elements by id
+    const doc = Utils.toDocument(html, this);
+    this.replaceChildren(doc);
+    Utils.Set_Id_Shortcuts(this, this, "cid");
 
     if (this.hasAttribute("label-text"))
     {

@@ -97,6 +97,10 @@ input-simple:has([cid=box_input]:focus.error) [cid=box_label]
 {
   color: #F38851;
 }
+input-simple [cid=box_label] .highlight
+{
+  color: #0FF788;
+}
 
 /* input ======================================================================================= */
 
