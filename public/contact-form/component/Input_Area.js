@@ -39,7 +39,39 @@ class Input_Area extends HTMLElement
     }
   }
 
+  On_Mouse_Down(event)
+  {
+    const input_rect = this.box_input.getBoundingClientRect();
+    this.input_top = input_rect.top;
+    this.offset_y = event.clientY - input_rect.bottom;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    window.addEventListener("mousemove", this.On_Mouse_Move);
+    window.addEventListener("mouseup", this.On_Mouse_Up);
+  }
+
+  On_Mouse_Up()
+  {
+    window.removeEventListener("mousemove", this.On_Mouse_Move);
+    window.removeEventListener("mouseup", this.On_Mouse_Up);
+  }
+
+  On_Mouse_Move(event)
+  {
+    const h = event.clientY - this.offset_y - this.input_top;
+    this.box_input.style.height = h + "px";
+  }
+
   // rendering ====================================================================================
+
+  Render_Resizer()
+  {
+    return `
+      <img cid="resizer" src="./image/icon-drag.svg">
+    `;
+  }
 
   Render_Length()
   {
@@ -76,11 +108,13 @@ class Input_Area extends HTMLElement
     this.innerHTML = `
       ${this.Render_Input()}
       ${this.Render_Length()}
+      ${this.Render_Resizer()}
     `;
 
     Utils.Set_Id_Shortcuts(this, this, "cid");
 
     this.box_input.addEventListener("input", this.On_Change);
+    this.resizer.addEventListener("mousedown", this.On_Mouse_Down);
   }
 }
 

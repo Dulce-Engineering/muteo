@@ -8,7 +8,7 @@ input-area
   transition: 250ms;
   height: auto;
   width: 100%;
-  padding: 18px 20px;
+  padding: 18px 20px 40px 20px;
   margin: 14px 0 16px 0;
   font-size: 0;
 }
@@ -16,14 +16,13 @@ input-area:hover
 {
   border: 1px solid #fff;
 }
-input-area::after
+input-area [cid=resizer]
 {
   content: url(../image/icon-drag.svg);
   position: absolute;
   bottom: 18px;
   right: 20px;
   background-color: #4200b2;
-  pointer-events: none;
 }
 
 /* input ======================================================================================= */
@@ -47,6 +46,7 @@ input-area [cid=box_input]
   min-width: 100%;
   max-width: 100%;
   min-height: 51px;
+  resize: none;
 }
 input-area [cid=box_input]:focus
 {
