@@ -54,7 +54,6 @@ input-simple:hover:has(input.error)
 input-simple [cid=box_label] 
 {
   font-family: 'PlusJakartaSanswght', sans-serif;
-  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -101,13 +100,26 @@ input-simple [cid=box_label] .highlight
 {
   color: #0FF788;
 }
+@media (max-width: 1170px) 
+{
+  input-simple [cid=box_label] 
+  {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1170px) 
+{
+  input-simple [cid=box_label] 
+  {
+    font-size: 16px;
+  }
+}
 
 /* input ======================================================================================= */
 
 input-simple [cid=box_input] 
 {
   font-family: 'PlusJakartaSanswght', sans-serif;
-  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -125,6 +137,20 @@ input-simple [cid=box_input]:focus
 {
   border: none;
   color: #fff;
+}
+@media (max-width: 1170px) 
+{
+  input-simple [cid=box_input] 
+  {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1170px) 
+{
+  input-simple [cid=box_input] 
+  {
+    font-size: 16px;
+  }
 }
 
 input-simple label.error
